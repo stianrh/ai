@@ -1,5 +1,6 @@
 #include "utils.h"
 #include <math.h>
+#include <string>
 
 
 
@@ -47,4 +48,18 @@ void Clamp(double &arg, double min, double max)
 	{
 		arg = max;
 	}
+}
+
+std::string int2bin(int in, int l){
+    std::string out;
+    for(int i = 0; i < l; i++){
+        out.insert(0,1,((in >> i) & 0x01) ? '1' : '0');
+    }
+    return out;
+}
+
+void int2bin(int in, double out[], int l){
+    for(int i = 0; i < l; i++){
+        out[i] = (in >> i) & 0x01;
+    }
 }

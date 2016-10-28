@@ -59,6 +59,9 @@ struct SPoint
 	SPoint(float a, float b):x(a),y(b){}
 };
 
+void int2bin(int in, double out[], int l);
+std::string int2bin(int in, int l);
+
 
 
 

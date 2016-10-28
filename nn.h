@@ -10,11 +10,13 @@ public:
     double lRate;
     double delta;
     double error;
+    double cd;
     vector<double> weight;
     vector<double> new_weight;
     vector<Neuron*> inputs;
     vector<Neuron*> outputs;
     double output;
+    double netInput;
     void calcOutput();
     void calcDelta(double cd);
     void calcError();
@@ -44,6 +46,7 @@ public:
     int numOutput;
     int numHiddenLayer;
     int numNeuron;
+    int numRun;
     double lRate;
     double *output;
     double error;
@@ -55,6 +58,7 @@ public:
     double getError(double ideal[]);
     int getErrorInt(double ideal[]);
     void updateWeights();
+    void print(int s, double ideal[], int t_size, int t_num);
 };
 
 #endif //__NN_H
