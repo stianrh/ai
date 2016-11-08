@@ -3,7 +3,7 @@ CFLAGS = -Wall -g
 INCLUDES = -I.
 #LFLAGS = 
 LIBS = -lncurses
-SRCS = utils.cpp nn.cpp main.cpp
+SRCS = utils.cpp main.cpp network.cpp neuron.cpp layer.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 MAIN = nn
@@ -29,5 +29,7 @@ depend: $(SRCS)
 # DO NOT DELETE
 
 utils.o: utils.h
-nn.o: nn.h utils.h
-main.o: nn.h utils.h
+main.o: network.h layer.h neuron.h utils.h
+network.o: network.h layer.h neuron.h utils.h
+neuron.o: network.h layer.h neuron.h utils.h
+layer.o: network.h layer.h neuron.h
